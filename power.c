@@ -1,19 +1,12 @@
 //a^b 
-// O(log(b))
+// O(b) version
 #include <stdio.h>
-
-long long poww(long long a , long long b){
-    if (!b)
-        return 1 ; 
-    long long x = poww(a , b/2) ; 
-    //if (b%2)
-    //    return x*x*a ; 
-    return x*x ; 
-}
 
 
 int main(){
-    long long a , b ; 
+    long long a , b , ans = 1 ; 
     scanf("%lld %lld" , &a , &b) ; 
-    printf("%lld" , poww(a , b)) ; 
+    for (int i = 1 ; i <= b ; i++)
+        ans = ans * a ; 
+    printf("%lld" , ans) ; 
 }
